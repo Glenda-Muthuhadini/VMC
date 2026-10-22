@@ -2,6 +2,18 @@ import { business } from "./business.js";
 
 export function initSite() {
   document.documentElement.classList.add("js-ready");
+  const pagePath = window.location.pathname;
+  const isSectionPage = /\/(about|contact|projects|services)(?:\/|$)/.test(pagePath);
+  const logoPath = new URL("../Luxury VMC Painting Solutions Logo.png", import.meta.url).href;
+  document.querySelectorAll(".brand-mark").forEach(mark => {
+    const brand = mark.parentElement;
+    const logo = document.createElement("img");
+    logo.className = "brand-logo";
+    logo.src = logoPath;
+    logo.alt = "VMC Painting Solutions";
+    brand.querySelector(".brand-name")?.remove();
+    mark.replaceWith(logo);
+  });
   const header = document.querySelector(".site-header");
   const menu = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".primary-navigation");
@@ -53,7 +65,8 @@ export function initSite() {
     whatsapp: { href: business.whatsappHref, label: business.whatsapp, external: true },
     phone: { href: `tel:${business.phoneHref}`, label: business.phone },
     email: { href: business.emailHref, label: business.email },
-    facebook: { href: business.facebookHref, label: business.facebook, external: true }
+    facebook: { href: business.facebookHref, label: business.facebook, external: true },
+    address: { href: `https://maps.google.com/?q=${encodeURIComponent(business.address)}`, label: business.address, external: true }
   };
   document.querySelectorAll("[data-contact-link]").forEach(link => {
     const contact = contactLinks[link.getAttribute("data-contact-link")];
@@ -64,5 +77,17 @@ export function initSite() {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
     }
+  });
+
+  document.querySelectorAll("[data-social-handle]").forEach(el => {
+    const platform = el.getAttribute("data-social-handle");
+    if (platform && business.social[platform]) el.textContent = business.social[platform];
+  });
+
+  document.querySelectorAll(".footer-tagline").forEach(el => { el.textContent = business.tagline; });
+  document.querySelectorAll(".footer-bottom span:nth-child(2)").forEach(el => { el.textContent = business.tagline; });
+  const isContactPage = /\/contact(?:\/|$)/.test(pagePath);
+  document.querySelectorAll(".nav-quote").forEach(link => {
+    link.href = isContactPage ? "#quote-form" : isSectionPage ? "../contact/#quote-form" : "contact/#quote-form";
   });
 }

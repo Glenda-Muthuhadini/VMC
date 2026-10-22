@@ -3,6 +3,12 @@
 .projects-intro { padding-bottom: 2rem; background: var(--paper); }
 .projects-intro-row { display: grid; grid-template-columns: .6fr 1fr; gap: 12%; align-items: start; }
 .projects-intro-row > p:last-child { max-width: 680px; margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.85; }
+.before-after-section { padding-top: 2rem; background: var(--paper); }
+.before-after-section h2 { margin: 1.3rem 0 3rem; }
+.before-after-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.before-after-slot { min-height: clamp(250px, 32vw, 420px); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: .7rem; background: #e9e6de; border: 1px dashed rgba(28,27,24,.28); }
+.before-after-slot span { color: var(--gold-dark); font-size: .65rem; font-weight: 600; letter-spacing: .15em; }
+.before-after-slot p { margin: 0; color: var(--muted); font-family: var(--serif); font-size: 1.5rem; }
 .project-filters { width: min(1240px, 100%); margin: 4rem auto 0; display: flex; flex-wrap: wrap; gap: 1.8rem; border-bottom: 1px solid var(--line); }
 .filter-button { position: relative; padding: 0 0 1rem; border: 0; color: var(--muted); background: transparent; font-size: .72rem; cursor: pointer; transition: color .2s ease; }
 .filter-button::after { position: absolute; right: 100%; bottom: -1px; left: 0; height: 1px; content: ""; background: var(--gold-dark); transition: right .2s ease; }
@@ -31,6 +37,8 @@
 @media (max-width: 760px) {
   .projects-hero { min-height: 560px; }
   .projects-intro-row { grid-template-columns: 1fr; gap: 1rem; }
+  .before-after-grid { grid-template-columns: 1fr; }
+  .before-after-slot { min-height: 65vw; }
   .project-filters { gap: 1.1rem; margin-top: 2.5rem; }
   .filter-button { font-size: .64rem; }
   .project-grid { grid-template-columns: 1fr; gap: 2.5rem; }

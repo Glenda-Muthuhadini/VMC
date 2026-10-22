@@ -47,6 +47,18 @@
 .home-cta-row { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-top: 2rem; }
 .home-cta h2 { margin: 0; }
 .home-cta-actions { display: flex; align-items: center; gap: 2rem; padding-bottom: .7rem; }
+.service-areas-section { display: grid; grid-template-columns: 1fr .8fr; gap: 12%; align-items: center; background: #fff; }
+.service-areas-copy h2 { margin: 1.5rem 0; }
+.service-areas-copy > p:not(.eyebrow) { max-width: 480px; color: var(--muted); font-size: .9rem; line-height: 1.85; }
+.service-areas-copy .text-link { margin-top: .8rem; }
+.service-areas-list { display: grid; }
+.service-areas-list span { padding: 1.3rem 0; border-top: 1px solid var(--line); font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 2rem); }
+.service-areas-list span:last-child { border-bottom: 1px solid var(--line); }
+.reviews-section { background: var(--paper); }
+.reviews-section h2 { margin: 1.4rem 0 0; }
+.review-placeholder { display: flex; justify-content: space-between; align-items: center; gap: 2rem; margin-top: 3rem; padding: 2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.review-placeholder p { margin: 0; color: var(--muted); font-family: var(--serif); font-size: 1.7rem; }
+.review-placeholder span { color: var(--gold-dark); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; }
 @media (max-width: 760px) {
   .intro-section { grid-template-columns: 1fr; grid-template-rows: auto auto auto; gap: 0; min-height: 0; }
   .intro-heading, .intro-body, .intro-image { grid-column: 1; grid-row: auto; }
@@ -55,6 +67,8 @@
   .intro-image img { height: 65vw; min-height: 260px; }
   .intro-side-note { display: none; }
   .services-preview-grid { grid-template-columns: 1fr; gap: 2.5rem; margin-top: 3rem; }
+  .service-areas-section { grid-template-columns: 1fr; gap: 2.5rem; }
+  .review-placeholder { align-items: start; flex-direction: column; gap: .8rem; }
   .section-topline { align-items: start; }
   .section-topline > .text-link { margin-top: .1rem; }
   .statement-band { min-height: 420px; }

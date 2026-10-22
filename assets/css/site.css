@@ -54,6 +54,9 @@ h1 em, h2 em { font-weight: 400; }
 .text-link:hover span { transform: translateX(4px); }
 .text-link-light:hover { color: var(--gold); }
 .text-link-light span { color: var(--gold); }
+.service-arrow { position: relative; display: inline-block; width: 18px; height: 18px; color: var(--gold-dark); font-size: 0; text-align: right; }
+.service-arrow::before { position: absolute; bottom: 4px; left: 2px; width: 11px; height: 1.5px; content: ""; background: currentColor; transform: rotate(-45deg); transform-origin: left center; }
+.service-arrow::after { position: absolute; top: 2px; right: 2px; width: 6px; height: 6px; content: ""; border-top: 1.5px solid currentColor; border-right: 1.5px solid currentColor; }
 .scroll-cue { position: absolute; left: 6.5vw; bottom: 2rem; display: flex; align-items: center; gap: .8rem; color: rgba(255,255,255,.78); font-size: .56rem; letter-spacing: .14em; }
 .scroll-line { width: 40px; height: 1px; background: var(--gold); transition: width .25s ease; }
 .scroll-cue:hover .scroll-line { width: 58px; }

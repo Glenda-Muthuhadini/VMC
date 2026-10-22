@@ -15,7 +15,7 @@
 .service-detail .service-number { padding-top: .6rem; }
 .service-detail h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 2.7rem); }
 .service-detail p { max-width: 480px; margin: .6rem 0 0; color: var(--muted); font-size: .83rem; line-height: 1.8; }
-.service-detail .service-arrow { padding-top: .6rem; }
+.service-detail .service-arrow { align-self: center; }
 .services-bottom { display: flex; justify-content: space-between; align-items: start; gap: 2rem; padding: 5.5rem 10vw; color: white; background: var(--ink); }
 .services-bottom > div { display: flex; align-items: end; gap: 4rem; }
 .services-bottom h2 { margin: 1rem 0 0; }

@@ -20,7 +20,7 @@
 .service-list a:last-child { border-bottom: 1px solid var(--line); }
 .service-list a:hover { padding-left: .7rem; }
 .service-number { color: var(--gold-dark); font-family: var(--sans); font-size: .7rem; }
-.service-arrow { color: var(--gold-dark); text-align: right; font-family: var(--sans); font-size: .9rem; }
+.service-arrow { justify-self: end; }
 .statement-band { min-height: 550px; position: relative; display: flex; align-items: center; overflow: hidden; color: #fff; background: var(--ink); }
 .statement-band > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .statement-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(9,9,8,.68), rgba(9,9,8,.12)); }
